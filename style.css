@@ -14,7 +14,7 @@
   --font-size-sm: 0.875rem; /* ~14px */
   --font-size-md: 1rem; /* ~16px */
   --font-size-lg: 1.25rem; /* ~20px */
-  --font-size-xl: 1.5rem; /* ~24px */
+  --font-size-xl: 1.3rem; /* ~24px */
 
   --font-size-h1: clamp(1.2rem, -0.6375rem + 2.375vw, var(--font-size-xl));
 
@@ -28,7 +28,7 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  --radius: 0.938rem; /* ~15px */
+  --radius: 0.75rem; /* ~15px */
 }
 
 @layer base {
@@ -55,7 +55,7 @@
   h1 {
     font-size: var(--font-size-h1);
     font-weight: var(--font-weight-bold);
-    line-height: 1.2;
+    line-height: 1.4;
     transition: 200ms ease-in-out;
     transition-property: color;
 
@@ -90,14 +90,14 @@
     border-radius: var(--radius);
     flex-direction: column;
     flex-wrap: wrap;
-    width: min(940px, 90%);
+    width: min(730px, 90%);
     margin-inline: auto;
 
     &:hover {
       .article__image {
         img {
           transform: scale(1.01);
-          filter: grayscale(0) saturate(1.2);
+          filter: grayscale(.8) saturate(1.4);
         }
       }
     }
@@ -114,15 +114,16 @@
       object-position: left center;
       transform: scale(1.05);
       transition: 0.3s ease-out;
-      filter: grayscale(0.4);
+      filter: grayscale(0);
     }
   }
 
   .article__info {
     flex: 2;
     display: grid;
-    row-gap: 1.2rem;
-    padding: 2rem;
+    row-gap: .8rem;
+    padding-block: 2rem;
+    padding-inline: 2.3rem;
   }
 
   .article__author {
@@ -151,7 +152,7 @@
 
   .article__share {
     margin-left: auto;
-    margin-right: 1rem;
+    margin-right: .5rem;
     position: relative;
   }
 
@@ -196,6 +197,15 @@
       column-gap: 1rem;
       padding: 0;
     }
+
+    a {
+      transition: 150ms ease-in-out;
+      transition-property: opacity;
+
+      &:hover, &:active {
+        opacity: .7;
+      }
+    }
   }
 
   .article__share-btn {
@@ -205,8 +215,8 @@
     display: grid;
     place-items: center;
     cursor: pointer;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem;
+    height: 2rem;
     transition: 150ms ease-in-out;
     transition-property: background-color, rotate;
     
